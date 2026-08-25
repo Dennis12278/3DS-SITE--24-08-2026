@@ -1,0 +1,36 @@
+<header class="header"> 
+ 
+    <div class="logo"> 
+        <img src="/logo-dream.png" alt="DREAM"> 
+    </div> 
+ 
+    <div class="search"> 
+ 
+        <i class="bi bi-search"></i> 
+ 
+        <input 
+            type="text" 
+            placeholder="Pesquise qualquer título..." 
+        > 
+ 
+        <button>Navegar</button> 
+ 
+    </div> 
+ 
+    <div class="menu"> 
+ 
+        <i class="bi bi-gear"></i> 
+ 
+        <i class="bi bi-list"></i> 
+ 
+        <i class="bi bi-bell"></i> 
+ 
+        <div class="perfil" (click)="toggleUserMenu()"> 
+            D 
+        </div> 
+ 
+    </div>
+
+    <app-user-menu *ngIf="userMenuOpen"></app-user-menu>
+ 
+</header>

@@ -1,0 +1,114 @@
+.user-menu {
+    position: absolute;
+    top: 75px;
+    right: 20px;
+
+    width: 360px;
+    background-color: #303a40;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    z-index: 1000;
+}
+
+/* CABEÇALHO */
+.user-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px;
+
+    background-color: #374249;
+    border-radius: 8px;
+}
+
+/* AVATAR */
+.user-avatar {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #41647c;
+
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* INFORMAÇÕES */
+.user-info h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.user-info span {
+    color: #8f9ba3;
+    font-size: 16px;
+}
+
+/* OPÇÕES */
+.menu-options {
+    padding: 8px 0;
+}
+
+.user-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 15px;
+
+    border: none;
+    background: transparent;
+
+    color: #b7c0c6;
+
+    font-size: 18px;
+    text-align: left;
+
+    cursor: pointer;
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.user-option i {
+    width: 25px;
+    font-size: 20px;
+    color: #7d8b94;
+}
+
+.user-option:hover {
+    background-color: #3a454c;
+    color: white;
+}
+
+.user-option:hover i {
+    color: white;
+}
+
+/* LINHA DIVISÓRIA */
+.menu-divider {
+    height: 1px;
+    background-color: #414c53;
+    margin: 8px 0;
+}
+
+/* SAIR */
+.logout {
+    background-color: #374249;
+}
+
+.logout:hover {
+    background-color: #414d55;
+}

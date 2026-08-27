@@ -1,17 +1,58 @@
 <div class="profile-page">
 
-    <!-- CABEÇALHO DO PERFIL -->
+    <!-- =========================
+         CABEÇALHO DO PERFIL
+    ========================== -->
+
     <section class="profile-header">
 
-        <div class="profile-avatar">
-            U
-        </div>
+        <!-- AVATAR DO USUÁRIO -->
+        <label class="profile-avatar">
 
+            <!-- INPUT PARA ESCOLHER A FOTO -->
+            <input
+                type="file"
+                accept="image/*"
+                (change)="selecionarAvatar($event)"
+            >
+
+            <!-- SE TIVER FOTO -->
+            @if (avatarUrl) {
+
+                <img
+                    [src]="avatarUrl"
+                    alt="Avatar do usuário"
+                    class="profile-avatar-image"
+                >
+
+            } @else {
+
+                <!-- AVATAR PADRÃO -->
+                <span class="profile-avatar-default">
+                    <i class="bi bi-person-fill"></i>
+                </span>
+
+            }
+
+            <!-- CÂMERA -->
+            <span class="profile-avatar-overlay">
+                <i class="bi bi-camera-fill"></i>
+            </span>
+
+        </label>
+
+
+        <!-- NOME DO USUÁRIO -->
         <div class="profile-name">
+
             <h1>Usuário</h1>
+
             <span>@usuario</span>
+
         </div>
 
+
+        <!-- ESTATÍSTICAS -->
         <div class="profile-stats">
 
             <div class="stat">
@@ -49,97 +90,208 @@
     </section>
 
 
+    <!-- =========================
+         CONTEÚDO DO PERFIL
+    ========================== -->
+
     <div class="profile-content">
 
-        <!-- MENU LATERAL -->
+
+        <!-- =========================
+             MENU LATERAL
+        ========================== -->
+
         <aside class="profile-sidebar">
 
             <button class="sidebar-item active">
+
                 <i class="bi bi-person"></i>
-                Meu Perfil
+
+                <span>Meu Perfil</span>
+
             </button>
 
+
             <button class="sidebar-item">
+
                 <i class="bi bi-bookmark"></i>
-                Títulos Seguidos
+
+                <span>Títulos Seguidos</span>
+
             </button>
 
+
             <button class="sidebar-item">
+
                 <i class="bi bi-clock-history"></i>
-                Histórico de Leitura
+
+                <span>Histórico de Leitura</span>
+
             </button>
 
+
             <button class="sidebar-item">
+
                 <i class="bi bi-collection"></i>
-                Coleções
+
+                <span>Coleções</span>
+
             </button>
 
+
             <button class="sidebar-item">
+
                 <i class="bi bi-bell"></i>
-                Notificações
+
+                <span>Notificações</span>
+
             </button>
 
+
             <button class="sidebar-item">
+
                 <i class="bi bi-gear"></i>
-                Configurações
+
+                <span>Configurações</span>
+
             </button>
 
         </aside>
 
 
-        <!-- CONTEÚDO PRINCIPAL -->
+        <!-- =========================
+             ÁREA PRINCIPAL
+        ========================== -->
+
         <main class="profile-main">
 
+
+            <!-- TÍTULO -->
+
             <div class="page-title">
+
                 <h2>Meu Perfil</h2>
-                <p>Gerencie suas informações e personalize seu perfil.</p>
+
+                <p>
+                    Gerencie suas informações e personalize seu perfil.
+                </p>
+
             </div>
 
 
+            <!-- CARD -->
+
             <section class="profile-card">
 
-                <!-- AVATAR -->
+
+                <!-- =========================
+                     AVATAR
+                ========================== -->
+
                 <div class="form-section">
 
                     <div class="section-info">
+
                         <h3>Avatar</h3>
-                        <p>Escolha uma imagem para representar seu perfil.</p>
+
+                        <p>
+                            Escolha uma imagem para representar seu perfil.
+                        </p>
+
                     </div>
 
-                    <!-- AVATAR EDITÁVEL -->
+
                     <div class="avatar-edit-container">
 
-                        <div class="avatar-preview">
-                            <i class="bi bi-camera camera-icon"></i>
+                        <label class="avatar-preview">
 
-                            <span class="avatar-letter">U</span>
+                            <!-- INPUT -->
+                            <input
+                                type="file"
+                                accept="image/*"
+                                (change)="selecionarAvatar($event)"
+                            >
 
-                            <span class="edit-text">EDITAR</span>
-                        </div>
+
+                            <!-- FOTO -->
+                            @if (avatarUrl) {
+
+                                <img
+                                    [src]="avatarUrl"
+                                    alt="Avatar do usuário"
+                                    class="avatar-image"
+                                >
+
+                            } @else {
+
+                                <!-- ÍCONE PADRÃO -->
+                                <span class="avatar-default">
+
+                                    <i class="bi bi-person-fill"></i>
+
+                                </span>
+
+                            }
+
+
+                            <!-- CÂMERA -->
+                            <span class="avatar-overlay">
+
+                                <i class="bi bi-camera-fill"></i>
+
+                            </span>
+
+                        </label>
 
                     </div>
 
                 </div>
 
 
-                <!-- NOME E USUÁRIO -->
+                <!-- =========================
+                     IDENTIDADE
+                ========================== -->
+
                 <div class="form-section">
 
                     <div class="section-info">
+
                         <h3>Identidade</h3>
-                        <p>Essas informações aparecerão no seu perfil.</p>
+
+                        <p>
+                            Essas informações aparecerão no seu perfil.
+                        </p>
+
                     </div>
+
 
                     <div class="form-fields two-columns">
 
                         <div class="input-group">
-                            <label>Nome de exibição</label>
-                            <input type="text" value="Usuário">
+
+                            <label>
+                                Nome de exibição
+                            </label>
+
+                            <input
+                                type="text"
+                                value="Usuário"
+                            >
+
                         </div>
 
+
                         <div class="input-group">
-                            <label>Nome de usuário</label>
-                            <input type="text" value="@usuario">
+
+                            <label>
+                                Nome de usuário
+                            </label>
+
+                            <input
+                                type="text"
+                                value="@usuario"
+                            >
+
                         </div>
 
                     </div>
@@ -147,22 +299,35 @@
                 </div>
 
 
-                <!-- BIO -->
+                <!-- =========================
+                     BIOGRAFIA
+                ========================== -->
+
                 <div class="form-section">
 
                     <div class="section-info">
+
                         <h3>Biografia</h3>
-                        <p>Conte um pouco sobre você.</p>
+
+                        <p>
+                            Conte um pouco sobre você.
+                        </p>
+
                     </div>
+
 
                     <div class="form-fields">
 
                         <div class="input-group">
-                            <label>Sobre você</label>
+
+                            <label>
+                                Sobre você
+                            </label>
 
                             <textarea
-                                placeholder="Conte um pouco sobre você...">
-                            </textarea>
+                                placeholder="Conte um pouco sobre você..."
+                            ></textarea>
+
                         </div>
 
                     </div>
@@ -170,22 +335,35 @@
                 </div>
 
 
-                <!-- LINKS -->
+                <!-- =========================
+                     LINKS
+                ========================== -->
+
                 <div class="form-section">
 
                     <div class="section-info">
+
                         <h3>Links sociais</h3>
-                        <p>Adicione links para suas redes sociais.</p>
+
+                        <p>
+                            Adicione links para suas redes sociais.
+                        </p>
+
                     </div>
+
 
                     <div class="form-fields">
 
                         <div class="input-group">
-                            <label>Links</label>
+
+                            <label>
+                                Links
+                            </label>
 
                             <textarea
-                                placeholder="https://exemplo.com">
-                            </textarea>
+                                placeholder="https://exemplo.com"
+                            ></textarea>
+
                         </div>
 
                     </div>
@@ -193,22 +371,36 @@
                 </div>
 
 
-                <!-- EMAIL -->
+                <!-- =========================
+                     EMAIL
+                ========================== -->
+
                 <div class="form-section">
 
                     <div class="section-info">
+
                         <h3>E-mail</h3>
-                        <p>Seu endereço de e-mail.</p>
+
+                        <p>
+                            Seu endereço de e-mail.
+                        </p>
+
                     </div>
+
 
                     <div class="form-fields">
 
                         <div class="input-group">
-                            <label>Endereço de e-mail</label>
+
+                            <label>
+                                Endereço de e-mail
+                            </label>
 
                             <input
                                 type="email"
-                                value="usuario@email.com">
+                                value="usuario@email.com"
+                            >
+
                         </div>
 
                     </div>
@@ -216,30 +408,50 @@
                 </div>
 
 
-                <!-- SENHA -->
+                <!-- =========================
+                     SENHA
+                ========================== -->
+
                 <div class="form-section">
 
                     <div class="section-info">
+
                         <h3>Senha</h3>
-                        <p>Altere sua senha, se necessário.</p>
+
+                        <p>
+                            Altere sua senha, se necessário.
+                        </p>
+
                     </div>
+
 
                     <div class="form-fields two-columns">
 
                         <div class="input-group">
-                            <label>Nova senha</label>
+
+                            <label>
+                                Nova senha
+                            </label>
 
                             <input
                                 type="password"
-                                placeholder="••••••••">
+                                placeholder="••••••••"
+                            >
+
                         </div>
 
+
                         <div class="input-group">
-                            <label>Confirmar nova senha</label>
+
+                            <label>
+                                Confirmar nova senha
+                            </label>
 
                             <input
                                 type="password"
-                                placeholder="••••••••">
+                                placeholder="••••••••"
+                            >
+
                         </div>
 
                     </div>
@@ -247,12 +459,20 @@
                 </div>
 
 
-                <!-- BOTÃO -->
+                <!-- =========================
+                     SALVAR
+                ========================== -->
+
                 <div class="save-area">
+
                     <button class="save-button">
+
                         Salvar alterações
+
                     </button>
+
                 </div>
+
 
             </section>
 

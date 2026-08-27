@@ -1,6 +1,6 @@
 <div class="user-menu">
 
-    <!-- CABEÇALHO -->
+    <!-- CABEÇALHO DO USUÁRIO -->
     <div class="user-header">
 
         <div class="user-avatar">
@@ -58,6 +58,16 @@
         </button>
 
 
+        <!-- CONTEÚDOS BAIXADOS -->
+        <button
+            class="user-option"
+            (click)="fechar()"
+        >
+            <i class="bi bi-download"></i>
+            <span>Conteúdos Baixados</span>
+        </button>
+
+
         <!-- COLEÇÕES -->
         <button
             class="user-option"
@@ -78,6 +88,16 @@
         </button>
 
 
+        <!-- MINHAS PUBLICAÇÕES -->
+        <button
+            class="user-option"
+            (click)="fechar()"
+        >
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Minhas Publicações</span>
+        </button>
+
+
         <!-- CONFIGURAÇÕES -->
         <button
             class="user-option"
@@ -90,6 +110,7 @@
     </div>
 
 
+    <!-- DIVISÓRIA -->
     <div class="menu-divider"></div>
 
 

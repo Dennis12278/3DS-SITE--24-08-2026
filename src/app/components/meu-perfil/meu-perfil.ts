@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-meu-perfil',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './meu-perfil.html',
   styleUrl: './meu-perfil.css',
 })
@@ -11,7 +13,10 @@ export class MeuPerfil {
 
   avatarUrl: string | null = null;
 
+  constructor(private router: Router) {}
+
   selecionarAvatar(event: Event): void {
+
     const input = event.target as HTMLInputElement;
 
     if (!input.files || input.files.length === 0) {
@@ -32,4 +37,17 @@ export class MeuPerfil {
 
     leitor.readAsDataURL(arquivo);
   }
+
+  irParaMinhasPublicacoes(): void {
+    this.router.navigate(['/minhas-publicacoes']);
+  }
+
+  irParaTitulosSeguidos(): void {
+    this.router.navigate(['/titulos-seguidos']);
+  }
+
+  irParaPerfilPublico(): void {
+    this.router.navigate(['/perfil-publico']);
+  }
+
 }

@@ -1,0 +1,62 @@
+.pagina-perfil {
+    padding: 10px 0;
+}
+
+.pagina-perfil h1 {
+    margin: 0 0 6px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.descricao {
+    margin: 0 0 25px;
+    color: #91a5b3;
+    font-size: 14px;
+}
+
+.conteudo-vazio {
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #29343a;
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+.icone-vazio {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #34434b;
+    border-radius: 50%;
+
+    margin-bottom: 15px;
+}
+
+.icone-vazio i {
+    color: #58d8f2;
+    font-size: 23px;
+}
+
+.conteudo-vazio h2 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.conteudo-vazio p {
+    margin: 0;
+
+    color: #8195a2;
+    font-size: 13px;
+}

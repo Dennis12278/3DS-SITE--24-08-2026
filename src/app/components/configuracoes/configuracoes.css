@@ -5,13 +5,9 @@
 .configuracoes-page {
     width: 100%;
     min-height: calc(100vh - 90px);
-
     display: flex;
-
     background: #20272b;
-
     color: #e8edf0;
-
     box-sizing: border-box;
 }
 
@@ -23,18 +19,12 @@
 .profile-sidebar {
     width: 350px;
     min-width: 350px;
-
     min-height: calc(100vh - 90px);
-
     padding: 35px 25px 35px 48px;
-
     box-sizing: border-box;
-
     background: #20272b;
-
     display: flex;
     flex-direction: column;
-
     gap: 8px;
 }
 
@@ -46,45 +36,28 @@
 .sidebar-item {
     width: 323px;
     height: 60px;
-
     border: none;
-
     border-radius: 8px;
-
     background: transparent;
-
     color: #aebbc2;
-
     padding: 0 22px;
-
     display: flex;
     align-items: center;
-
     gap: 22px;
-
     font-size: 18px;
-
     text-align: left;
-
     cursor: pointer;
-
-    transition: background .2s ease,
-                color .2s ease;
+    transition: background .2s ease, color .2s ease;
 }
-
 
 .sidebar-item i {
     width: 24px;
-
     font-size: 20px;
-
     text-align: center;
 }
 
-
 .sidebar-item:hover {
     background: #2b353a;
-
     color: #e9edef;
 }
 
@@ -95,14 +68,11 @@
 
 .sidebar-item.active {
     background: #3a474e;
-
     color: #ffffff;
 }
 
-
 .sidebar-item.active:hover {
     background: #3a474e;
-
     color: #ffffff;
 }
 
@@ -113,11 +83,8 @@
 
 .config-content {
     flex: 1;
-
     min-width: 0;
-
     padding: 45px 45px 60px 38px;
-
     box-sizing: border-box;
 }
 
@@ -128,52 +95,33 @@
 
 .config-tabs {
     width: 100%;
-
     display: flex;
-
     gap: 8px;
-
     border-bottom: 1px solid #354047;
-
     margin-bottom: 35px;
 }
 
-
 .tab {
     border: none;
-
     background: transparent;
-
     color: #8d999f;
-
     padding: 15px 22px;
-
     cursor: pointer;
-
     display: flex;
-
     align-items: center;
-
     gap: 9px;
-
     font-size: 14px;
-
     font-weight: 500;
-
     border-bottom: 2px solid transparent;
-
     transition: .2s ease;
 }
-
 
 .tab:hover {
     color: #dce2e5;
 }
 
-
 .tab.active {
     color: #ffffff;
-
     border-bottom-color: #8b5cf6;
 }
 
@@ -186,25 +134,17 @@
     max-width: 900px;
 }
 
-
 .config-section h1 {
     margin: 0;
-
     font-size: 25px;
-
     font-weight: 600;
-
     color: #ffffff;
 }
 
-
 .subtitle {
     margin: 8px 0 28px;
-
     color: #8d999f;
-
     font-size: 14px;
-
     line-height: 1.5;
 }
 
@@ -215,50 +155,32 @@
 
 .config-card {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 30px;
-
     background: #252e33;
-
     border: 1px solid #354047;
-
     border-radius: 8px;
-
     padding: 24px;
-
     margin-bottom: 18px;
-
     box-sizing: border-box;
 }
-
 
 .section-info {
     flex: 1;
 }
 
-
 .section-info h2 {
     margin: 0 0 7px;
-
     font-size: 16px;
-
     font-weight: 600;
-
     color: #e9edef;
 }
 
-
 .section-info p {
     margin: 0;
-
     color: #87939a;
-
     font-size: 13px;
-
     line-height: 1.5;
 }
 
@@ -269,32 +191,20 @@
 
 .section-action {
     display: flex;
-
     align-items: center;
-
     gap: 15px;
 }
 
-
 .avatar {
     width: 55px;
-
     height: 55px;
-
     border-radius: 50%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     background: #3d4a51;
-
     color: #ffffff;
-
     font-size: 21px;
-
     font-weight: 600;
 }
 
@@ -306,39 +216,27 @@
 .primary-button,
 .secondary-button {
     border: none;
-
     border-radius: 6px;
-
     padding: 10px 16px;
-
     font-size: 13px;
-
     cursor: pointer;
-
     transition: .2s ease;
 }
 
-
 .primary-button {
     background: #8b5cf6;
-
     color: #ffffff;
 }
-
 
 .primary-button:hover {
     background: #7c4fe0;
 }
 
-
 .secondary-button {
     background: #303a40;
-
     color: #dce2e5;
-
     border: 1px solid #414d54;
 }
-
 
 .secondary-button:hover {
     background: #39454c;
@@ -351,68 +249,46 @@
 
 .email-area {
     flex-direction: row;
-
     align-items: center;
 }
 
-
 .email-form {
     width: 390px;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 8px;
 }
-
 
 .email-form label,
 .password-form label {
     color: #7f8b92;
-
     font-size: 11px;
-
     font-weight: 600;
-
     letter-spacing: .5px;
 }
 
-
 .input-button {
     display: flex;
-
     gap: 10px;
 }
 
-
 input {
     box-sizing: border-box;
-
     background: #1d2428;
-
     border: 1px solid #3a464d;
-
     border-radius: 6px;
-
     color: #e9edef;
-
     outline: none;
-
     padding: 11px 13px;
-
     font-size: 13px;
 }
-
 
 input:focus {
     border-color: #8b5cf6;
 }
 
-
 .input-button input {
     flex: 1;
-
     min-width: 0;
 }
 
@@ -425,17 +301,12 @@ input:focus {
     align-items: center;
 }
 
-
 .password-form {
     width: 390px;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 8px;
 }
-
 
 .password-form input {
     width: 100%;
@@ -448,12 +319,9 @@ input:focus {
 
 .save-area {
     display: flex;
-
     justify-content: flex-end;
-
     margin-top: 25px;
 }
-
 
 .save-button {
     padding: 11px 22px;
@@ -466,45 +334,28 @@ input:focus {
 
 .visibility-card {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 25px;
-
     background: #252e33;
-
     border: 1px solid #354047;
-
     border-radius: 8px;
-
     padding: 21px 24px;
-
     margin-bottom: 12px;
-
     box-sizing: border-box;
 }
 
-
 .visibility-card h2 {
     margin: 0 0 6px;
-
     color: #e9edef;
-
     font-size: 15px;
-
     font-weight: 600;
 }
 
-
 .visibility-card p {
     margin: 0;
-
     color: #87939a;
-
     font-size: 13px;
-
     line-height: 1.45;
 }
 
@@ -515,60 +366,39 @@ input:focus {
 
 .switch {
     position: relative;
-
     width: 46px;
-
     height: 25px;
-
     flex-shrink: 0;
 }
-
 
 .switch input {
     display: none;
 }
 
-
 .switch span {
     position: absolute;
-
     inset: 0;
-
     cursor: pointer;
-
     background: #3b464d;
-
     border-radius: 20px;
-
     transition: .2s ease;
 }
-
 
 .switch span::before {
     content: "";
-
     position: absolute;
-
     width: 19px;
-
     height: 19px;
-
     left: 3px;
-
     top: 3px;
-
     background: #d7dcdf;
-
     border-radius: 50%;
-
     transition: .2s ease;
 }
-
 
 .switch input:checked + span {
     background: #8b5cf6;
 }
-
 
 .switch input:checked + span::before {
     transform: translateX(21px);
@@ -581,72 +411,49 @@ input:focus {
 
 .theme-card {
     background: #252e33;
-
     border: 1px solid #354047;
-
     border-radius: 8px;
-
     overflow: hidden;
 }
 
-
 .theme-option {
     display: flex;
-
     align-items: center;
-
     gap: 15px;
-
     padding: 20px 23px;
-
     cursor: pointer;
-
     border-bottom: 1px solid #354047;
-
     transition: .2s ease;
 }
-
 
 .theme-option:last-child {
     border-bottom: none;
 }
 
-
 .theme-option:hover {
     background: #2b353a;
 }
-
 
 .theme-option.selected {
     background: #2b353a;
 }
 
-
 .theme-option input {
     width: 17px;
-
     height: 17px;
-
     accent-color: #8b5cf6;
 }
 
-
 .theme-option strong {
     display: block;
-
     color: #e9edef;
-
     font-size: 14px;
-
     margin-bottom: 4px;
 }
 
-
 .theme-option p {
     margin: 0;
-
     color: #87939a;
-
     font-size: 12px;
 }
 
@@ -659,19 +466,14 @@ input:focus {
 
     .profile-sidebar {
         width: 280px;
-
         min-width: 280px;
-
         padding-left: 25px;
     }
 
-
     .sidebar-item {
         width: 100%;
-
         font-size: 16px;
     }
-
 }
 
 
@@ -681,46 +483,33 @@ input:focus {
         flex-direction: column;
     }
 
-
     .profile-sidebar {
         width: 100%;
-
         min-width: 0;
-
         min-height: auto;
-
         padding: 15px;
-
         flex-direction: row;
-
         overflow-x: auto;
     }
 
-
     .sidebar-item {
         width: auto;
-
         min-width: 170px;
     }
-
 
     .config-content {
         padding: 30px 20px;
     }
 
-
     .config-card {
         flex-direction: column;
-
         align-items: flex-start;
     }
-
 
     .email-form,
     .password-form {
         width: 100%;
     }
-
 }
 
 
@@ -730,26 +519,20 @@ input:focus {
         padding: 20px 15px;
     }
 
-
     .config-tabs {
         overflow-x: auto;
     }
 
-
     .tab {
         padding: 13px 15px;
-
         white-space: nowrap;
     }
-
 
     .input-button {
         flex-direction: column;
     }
 
-
     .input-button button {
         width: 100%;
     }
-
 }

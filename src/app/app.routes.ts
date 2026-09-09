@@ -1,9 +1,15 @@
 import { Routes } from '@angular/router';
 
 import { MeuPerfil } from './components/meu-perfil/meu-perfil';
+
 import { MinhasPublicacoes } from './components/minhas-publicacoes/minhas-publicacoes';
+
 import { TitulosSeguidos } from './components/titulos-seguidos/titulos-seguidos';
+
 import { PerfilPublico } from './components/perfil-publico/perfil-publico';
+
+import { UsuariosSeguidos } from './components/usuarios-seguidos/usuarios-seguidos';
+
 
 export const routes: Routes = [
 
@@ -29,15 +35,20 @@ export const routes: Routes = [
   },
 
   {
+    path: 'usuarios-seguidos',
+    component: UsuariosSeguidos
+  },
+
+  {
     path: 'perfil-publico',
     component: PerfilPublico
   },
-  
+
   {
     path: 'configuracoes',
     loadComponent: () =>
-        import('./components/configuracoes/configuracoes')
-            .then(m => m.Configuracoes)
-}
+      import('./components/configuracoes/configuracoes')
+        .then(m => m.Configuracoes)
+  }
 
 ];

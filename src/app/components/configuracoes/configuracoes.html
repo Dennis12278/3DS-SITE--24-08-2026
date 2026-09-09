@@ -10,10 +10,11 @@
         <button
             type="button"
             class="sidebar-item"
-            (click)="irParaMeuPerfil()"
-        >
+            (click)="irParaMeuPerfil()">
+
             <i class="bi bi-person"></i>
             <span>Editar Perfil</span>
+
         </button>
 
 
@@ -21,10 +22,11 @@
         <button
             type="button"
             class="sidebar-item"
-            (click)="irParaTitulosSeguidos()"
-        >
+            (click)="irParaTitulosSeguidos()">
+
             <i class="bi bi-bookmark"></i>
             <span>Títulos Seguidos</span>
+
         </button>
 
 
@@ -32,9 +34,11 @@
         <button
             type="button"
             class="sidebar-item"
-        >
+            (click)="irParaUsuariosSeguidos()">
+
             <i class="bi bi-person-plus"></i>
             <span>Usuários Seguidos</span>
+
         </button>
 
 
@@ -42,9 +46,11 @@
         <button
             type="button"
             class="sidebar-item"
-        >
+            (click)="irParaGruposSeguidos()">
+
             <i class="bi bi-people"></i>
             <span>Grupos Seguidos</span>
+
         </button>
 
 
@@ -52,9 +58,11 @@
         <button
             type="button"
             class="sidebar-item"
-        >
+            (click)="irParaHistorico()">
+
             <i class="bi bi-clock-history"></i>
             <span>Histórico de Leitura</span>
+
         </button>
 
 
@@ -62,9 +70,11 @@
         <button
             type="button"
             class="sidebar-item"
-        >
+            (click)="irParaColecoes()">
+
             <i class="bi bi-collection"></i>
             <span>Coleções</span>
+
         </button>
 
 
@@ -72,9 +82,11 @@
         <button
             type="button"
             class="sidebar-item"
-        >
+            (click)="irParaNotificacoes()">
+
             <i class="bi bi-bell"></i>
             <span>Notificações</span>
+
         </button>
 
 
@@ -82,10 +94,11 @@
         <button
             type="button"
             class="sidebar-item"
-            (click)="irParaMinhasPublicacoes()"
-        >
+            (click)="irParaMinhasPublicacoes()">
+
             <i class="bi bi-file-earmark-text"></i>
             <span>Minhas Publicações</span>
+
         </button>
 
 
@@ -93,10 +106,11 @@
         <button
             type="button"
             class="sidebar-item active"
-            (click)="irParaConfiguracoes()"
-        >
+            (click)="irParaConfiguracoes()">
+
             <i class="bi bi-gear"></i>
             <span>Configurações</span>
+
         </button>
 
     </aside>
@@ -108,7 +122,6 @@
 
     <main class="config-content">
 
-
         <!-- =====================================
              ABAS
         ====================================== -->
@@ -116,48 +129,39 @@
         <div class="config-tabs">
 
             <!-- CONTA -->
-
             <button
                 type="button"
                 class="tab"
                 [class.active]="abaAtiva === 'conta'"
-                (click)="abaAtiva = 'conta'"
-            >
+                (click)="abaAtiva = 'conta'">
 
                 <i class="bi bi-person"></i>
-
                 <span>Conta</span>
 
             </button>
 
 
             <!-- VISIBILIDADE -->
-
             <button
                 type="button"
                 class="tab"
                 [class.active]="abaAtiva === 'visibilidade'"
-                (click)="abaAtiva = 'visibilidade'"
-            >
+                (click)="abaAtiva = 'visibilidade'">
 
                 <i class="bi bi-eye"></i>
-
                 <span>Visibilidade</span>
 
             </button>
 
 
             <!-- TEMA -->
-
             <button
                 type="button"
                 class="tab"
                 [class.active]="abaAtiva === 'tema'"
-                (click)="abaAtiva = 'tema'"
-            >
+                (click)="abaAtiva = 'tema'">
 
                 <i class="bi bi-palette-fill"></i>
-
                 <span>Tema</span>
 
             </button>
@@ -171,8 +175,7 @@
 
         <section
             class="config-section"
-            *ngIf="abaAtiva === 'conta'"
-        >
+            *ngIf="abaAtiva === 'conta'">
 
             <h1>Conta</h1>
 
@@ -182,7 +185,6 @@
 
 
             <!-- AVATAR -->
-
             <div class="config-card">
 
                 <div class="section-info">
@@ -204,9 +206,10 @@
 
                     <button
                         type="button"
-                        class="secondary-button"
-                    >
+                        class="secondary-button">
+
                         Escolher imagem
+
                     </button>
 
                 </div>
@@ -215,7 +218,6 @@
 
 
             <!-- E-MAIL -->
-
             <div class="config-card email-area">
 
                 <div class="section-info">
@@ -241,15 +243,15 @@
                         <input
                             type="email"
                             [(ngModel)]="email"
-                            placeholder="seuemail@gmail.com"
-                        >
+                            placeholder="seuemail@gmail.com">
 
                         <button
                             type="button"
                             class="primary-button"
-                            (click)="salvarConta()"
-                        >
+                            (click)="salvarConta()">
+
                             Atualizar
+
                         </button>
 
                     </div>
@@ -260,7 +262,6 @@
 
 
             <!-- SENHA -->
-
             <div class="config-card password-area">
 
                 <div class="section-info">
@@ -283,8 +284,7 @@
                     <input
                         type="password"
                         [(ngModel)]="novaSenha"
-                        placeholder="Digite sua nova senha"
-                    >
+                        placeholder="Digite sua nova senha">
 
 
                     <label>
@@ -294,8 +294,7 @@
                     <input
                         type="password"
                         [(ngModel)]="confirmarSenha"
-                        placeholder="Confirme sua nova senha"
-                    >
+                        placeholder="Confirme sua nova senha">
 
                 </div>
 
@@ -303,15 +302,15 @@
 
 
             <!-- SALVAR -->
-
             <div class="save-area">
 
                 <button
                     type="button"
                     class="primary-button save-button"
-                    (click)="salvarConta()"
-                >
+                    (click)="salvarConta()">
+
                     Salvar alterações
+
                 </button>
 
             </div>
@@ -325,8 +324,7 @@
 
         <section
             class="config-section"
-            *ngIf="abaAtiva === 'visibilidade'"
-        >
+            *ngIf="abaAtiva === 'visibilidade'">
 
             <h1>Visibilidade</h1>
 
@@ -337,7 +335,6 @@
 
 
             <!-- PERFIL PÚBLICO -->
-
             <div class="visibility-card">
 
                 <div>
@@ -356,8 +353,7 @@
 
                     <input
                         type="checkbox"
-                        [(ngModel)]="perfilPublico"
-                    >
+                        [(ngModel)]="perfilPublico">
 
                     <span></span>
 
@@ -367,7 +363,6 @@
 
 
             <!-- PUBLICAÇÕES -->
-
             <div class="visibility-card">
 
                 <div>
@@ -385,8 +380,7 @@
 
                     <input
                         type="checkbox"
-                        [(ngModel)]="mostrarPublicacoes"
-                    >
+                        [(ngModel)]="mostrarPublicacoes">
 
                     <span></span>
 
@@ -396,7 +390,6 @@
 
 
             <!-- ESTATÍSTICAS -->
-
             <div class="visibility-card">
 
                 <div>
@@ -415,8 +408,7 @@
 
                     <input
                         type="checkbox"
-                        [(ngModel)]="mostrarEstatisticas"
-                    >
+                        [(ngModel)]="mostrarEstatisticas">
 
                     <span></span>
 
@@ -426,15 +418,15 @@
 
 
             <!-- SALVAR -->
-
             <div class="save-area">
 
                 <button
                     type="button"
                     class="primary-button save-button"
-                    (click)="salvarVisibilidade()"
-                >
+                    (click)="salvarVisibilidade()">
+
                     Salvar alterações
+
                 </button>
 
             </div>
@@ -448,8 +440,7 @@
 
         <section
             class="config-section"
-            *ngIf="abaAtiva === 'tema'"
-        >
+            *ngIf="abaAtiva === 'tema'">
 
             <h1>Tema</h1>
 
@@ -460,20 +451,16 @@
 
             <div class="theme-card">
 
-
                 <!-- ESCURO -->
-
                 <label
                     class="theme-option"
-                    [class.selected]="tema === 'escuro'"
-                >
+                    [class.selected]="tema === 'escuro'">
 
                     <input
                         type="radio"
                         name="tema"
                         value="escuro"
-                        [(ngModel)]="tema"
-                    >
+                        [(ngModel)]="tema">
 
                     <div>
 
@@ -489,18 +476,15 @@
 
 
                 <!-- CLARO -->
-
                 <label
                     class="theme-option"
-                    [class.selected]="tema === 'claro'"
-                >
+                    [class.selected]="tema === 'claro'">
 
                     <input
                         type="radio"
                         name="tema"
                         value="claro"
-                        [(ngModel)]="tema"
-                    >
+                        [(ngModel)]="tema">
 
                     <div>
 
@@ -516,18 +500,15 @@
 
 
                 <!-- SISTEMA -->
-
                 <label
                     class="theme-option"
-                    [class.selected]="tema === 'sistema'"
-                >
+                    [class.selected]="tema === 'sistema'">
 
                     <input
                         type="radio"
                         name="tema"
                         value="sistema"
-                        [(ngModel)]="tema"
-                    >
+                        [(ngModel)]="tema">
 
                     <div>
 
@@ -544,14 +525,16 @@
             </div>
 
 
+            <!-- SALVAR -->
             <div class="save-area">
 
                 <button
                     type="button"
                     class="primary-button save-button"
-                    (click)="salvarTema()"
-                >
+                    (click)="salvarTema()">
+
                     Salvar alterações
+
                 </button>
 
             </div>

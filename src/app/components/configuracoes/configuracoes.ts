@@ -15,16 +15,7 @@ import { Router } from '@angular/router';
 })
 export class Configuracoes {
 
-  // =========================================
-  // ABA ATIVA
-  // =========================================
-
   abaAtiva: string = 'conta';
-
-
-  // =========================================
-  // CONTA
-  // =========================================
 
   usuarioInicial: string = 'D';
 
@@ -34,21 +25,11 @@ export class Configuracoes {
 
   confirmarSenha: string = '';
 
-
-  // =========================================
-  // VISIBILIDADE
-  // =========================================
-
   perfilPublico: boolean = true;
 
   mostrarPublicacoes: boolean = true;
 
   mostrarEstatisticas: boolean = true;
-
-
-  // =========================================
-  // TEMA
-  // =========================================
 
   tema: string = 'escuro';
 
@@ -56,9 +37,9 @@ export class Configuracoes {
   constructor(private router: Router) {}
 
 
-  // =========================================
-  // NAVEGAÇÃO DO MENU LATERAL
-  // =========================================
+  // ==============================
+  // NAVEGAÇÃO DO MENU
+  // ==============================
 
   irParaMeuPerfil(): void {
     this.router.navigate(['/meu-perfil']);
@@ -67,6 +48,31 @@ export class Configuracoes {
 
   irParaTitulosSeguidos(): void {
     this.router.navigate(['/titulos-seguidos']);
+  }
+
+
+  irParaUsuariosSeguidos(): void {
+    this.router.navigate(['/usuarios-seguidos']);
+  }
+
+
+  irParaGruposSeguidos(): void {
+    this.router.navigate(['/grupos-seguidos']);
+  }
+
+
+  irParaHistorico(): void {
+    this.router.navigate(['/historico-leitura']);
+  }
+
+
+  irParaColecoes(): void {
+    this.router.navigate(['/colecoes']);
+  }
+
+
+  irParaNotificacoes(): void {
+    this.router.navigate(['/notificacoes']);
   }
 
 
@@ -80,9 +86,9 @@ export class Configuracoes {
   }
 
 
-  // =========================================
-  // CONTA
-  // =========================================
+  // ==============================
+  // SALVAR CONTA
+  // ==============================
 
   salvarConta(): void {
 
@@ -106,32 +112,27 @@ export class Configuracoes {
 
 
     alert('Alterações da conta salvas com sucesso!');
-
   }
 
 
-  // =========================================
-  // VISIBILIDADE
-  // =========================================
+  // ==============================
+  // SALVAR VISIBILIDADE
+  // ==============================
 
   salvarVisibilidade(): void {
 
-    alert(
-      'Preferências de visibilidade salvas com sucesso!'
-    );
+    alert('Preferências de visibilidade salvas com sucesso!');
 
   }
 
 
-  // =========================================
-  // TEMA
-  // =========================================
+  // ==============================
+  // SALVAR TEMA
+  // ==============================
 
   salvarTema(): void {
 
-    alert(
-      'Preferência de tema salva com sucesso!'
-    );
+    alert('Preferência de tema salva com sucesso!');
 
   }
 

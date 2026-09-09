@@ -38,13 +38,51 @@ export class MeuPerfil {
     leitor.readAsDataURL(arquivo);
   }
 
-  irParaMinhasPublicacoes(): void {
-    this.router.navigate(['/minhas-publicacoes']);
+
+  irParaEditarPerfil(): void {
+    this.router.navigate(['/meu-perfil']);
   }
+
 
   irParaTitulosSeguidos(): void {
     this.router.navigate(['/titulos-seguidos']);
   }
+
+
+  irParaUsuariosSeguidos(): void {
+    this.router.navigate(['/usuarios-seguidos']);
+  }
+
+
+  irParaGruposSeguidos(): void {
+    this.router.navigate(['/grupos-seguidos']);
+  }
+
+
+  irParaHistorico(): void {
+    this.router.navigate(['/historico-leitura']);
+  }
+
+
+  irParaColecoes(): void {
+    this.router.navigate(['/colecoes']);
+  }
+
+
+  irParaNotificacoes(): void {
+    this.router.navigate(['/notificacoes']);
+  }
+
+
+  irParaMinhasPublicacoes(): void {
+    this.router.navigate(['/minhas-publicacoes']);
+  }
+
+
+  irParaConfiguracoes(): void {
+    this.router.navigate(['/configuracoes']);
+  }
+
 
   irParaPerfilPublico(): void {
     this.router.navigate(['/perfil-publico']);

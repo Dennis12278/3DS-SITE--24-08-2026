@@ -9,24 +9,20 @@
         <!-- AVATAR DO USUÁRIO -->
         <label class="profile-avatar">
 
-            <!-- INPUT PARA ESCOLHER A FOTO -->
             <input type="file" accept="image/*" (change)="selecionarAvatar($event)">
 
-            <!-- SE TIVER FOTO -->
             @if (avatarUrl) {
 
             <img [src]="avatarUrl" alt="Avatar do usuário" class="profile-avatar-image">
 
             } @else {
 
-            <!-- AVATAR PADRÃO -->
             <span class="profile-avatar-default">
                 <i class="bi bi-person-fill"></i>
             </span>
 
             }
 
-            <!-- CÂMERA -->
             <span class="profile-avatar-overlay">
                 <i class="bi bi-camera-fill"></i>
             </span>
@@ -95,10 +91,12 @@
 
         <aside class="profile-sidebar">
 
-
             <!-- EDITAR PERFIL -->
 
-            <button type="button" class="sidebar-item active">
+            <button
+                type="button"
+                class="sidebar-item active"
+                (click)="irParaEditarPerfil()">
 
                 <i class="bi bi-person"></i>
 
@@ -121,9 +119,26 @@
             </button>
 
 
+            <!-- USUÁRIOS SEGUIDOS -->
+
+            <button
+                type="button"
+                class="sidebar-item"
+                (click)="irParaUsuariosSeguidos()">
+
+                <i class="bi bi-person-plus"></i>
+
+                <span>Usuários Seguidos</span>
+
+            </button>
+
+
             <!-- GRUPOS SEGUIDOS -->
 
-            <button type="button" class="sidebar-item">
+            <button
+                type="button"
+                class="sidebar-item"
+                (click)="irParaGruposSeguidos()">
 
                 <i class="bi bi-people"></i>
 
@@ -134,7 +149,10 @@
 
             <!-- HISTÓRICO DE LEITURA -->
 
-            <button type="button" class="sidebar-item">
+            <button
+                type="button"
+                class="sidebar-item"
+                (click)="irParaHistorico()">
 
                 <i class="bi bi-clock-history"></i>
 
@@ -145,7 +163,10 @@
 
             <!-- COLEÇÕES -->
 
-            <button type="button" class="sidebar-item">
+            <button
+                type="button"
+                class="sidebar-item"
+                (click)="irParaColecoes()">
 
                 <i class="bi bi-collection"></i>
 
@@ -156,7 +177,10 @@
 
             <!-- NOTIFICAÇÕES -->
 
-            <button type="button" class="sidebar-item">
+            <button
+                type="button"
+                class="sidebar-item"
+                (click)="irParaNotificacoes()">
 
                 <i class="bi bi-bell"></i>
 
@@ -165,12 +189,26 @@
             </button>
 
 
+            <!-- MINHAS PUBLICAÇÕES -->
 
+            <button
+                type="button"
+                class="sidebar-item"
+                (click)="irParaMinhasPublicacoes()">
+
+                <i class="bi bi-file-earmark-text"></i>
+
+                <span>Minhas Publicações</span>
+
+            </button>
 
 
             <!-- CONFIGURAÇÕES -->
 
-            <button type="button" class="sidebar-item">
+            <button
+                type="button"
+                class="sidebar-item"
+                (click)="irParaConfiguracoes()">
 
                 <i class="bi bi-gear"></i>
 
@@ -186,9 +224,6 @@
         ========================== -->
 
         <main class="profile-main">
-
-
-            <!-- TÍTULO -->
 
             <div class="page-title">
 
@@ -227,18 +262,20 @@
 
                         <label class="avatar-preview">
 
-                            <!-- INPUT -->
-                            <input type="file" accept="image/*" (change)="selecionarAvatar($event)">
+                            <input
+                                type="file"
+                                accept="image/*"
+                                (change)="selecionarAvatar($event)">
 
-
-                            <!-- FOTO -->
                             @if (avatarUrl) {
 
-                            <img [src]="avatarUrl" alt="Avatar do usuário" class="avatar-image">
+                            <img
+                                [src]="avatarUrl"
+                                alt="Avatar do usuário"
+                                class="avatar-image">
 
                             } @else {
 
-                            <!-- ÍCONE PADRÃO -->
                             <span class="avatar-default">
 
                                 <i class="bi bi-person-fill"></i>
@@ -247,8 +284,6 @@
 
                             }
 
-
-                            <!-- CÂMERA -->
                             <span class="avatar-overlay">
 
                                 <i class="bi bi-camera-fill"></i>
@@ -287,7 +322,9 @@
                                 Nome de exibição
                             </label>
 
-                            <input type="text" value="Usuário">
+                            <input
+                                type="text"
+                                value="Usuário">
 
                         </div>
 
@@ -298,7 +335,9 @@
                                 Nome de usuário
                             </label>
 
-                            <input type="text" value="@usuario">
+                            <input
+                                type="text"
+                                value="@usuario">
 
                         </div>
 
@@ -332,7 +371,8 @@
                                 Sobre você
                             </label>
 
-                            <textarea placeholder="Conte um pouco sobre você..."></textarea>
+                            <textarea
+                                placeholder="Conte um pouco sobre você..."></textarea>
 
                         </div>
 
@@ -366,7 +406,8 @@
                                 Links
                             </label>
 
-                            <textarea placeholder="https://exemplo.com"></textarea>
+                            <textarea
+                                placeholder="https://exemplo.com"></textarea>
 
                         </div>
 
@@ -400,7 +441,9 @@
                                 Endereço de e-mail
                             </label>
 
-                            <input type="email" value="usuario@email.com">
+                            <input
+                                type="email"
+                                value="usuario@email.com">
 
                         </div>
 
@@ -434,7 +477,9 @@
                                 Nova senha
                             </label>
 
-                            <input type="password" placeholder="••••••••">
+                            <input
+                                type="password"
+                                placeholder="••••••••">
 
                         </div>
 
@@ -445,7 +490,9 @@
                                 Confirmar nova senha
                             </label>
 
-                            <input type="password" placeholder="••••••••">
+                            <input
+                                type="password"
+                                placeholder="••••••••">
 
                         </div>
 
@@ -460,7 +507,9 @@
 
                 <div class="save-area">
 
-                    <button class="save-button">
+                    <button
+                        type="button"
+                        class="save-button">
 
                         Salvar alterações
 

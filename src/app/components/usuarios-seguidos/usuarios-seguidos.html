@@ -1,23 +1,150 @@
-<div class="pagina-perfil">
+<div class="usuarios-page">
 
-    <h1>Usuários Seguidos</h1>
+  <aside class="profile-sidebar">
 
-    <p class="descricao">
-        Veja os usuários que você está seguindo.
-    </p>
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaEditarPerfil()"
+    >
+      <i class="bi bi-person"></i>
+      <span>Editar Perfil</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaTitulosSeguidos()"
+    >
+      <i class="bi bi-bookmark"></i>
+      <span>Títulos Seguidos</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item active"
+      (click)="irParaUsuariosSeguidos()"
+    >
+      <i class="bi bi-person-plus"></i>
+      <span>Usuários Seguidos</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaGruposSeguidos()"
+    >
+      <i class="bi bi-people"></i>
+      <span>Grupos Seguidos</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaHistorico()"
+    >
+      <i class="bi bi-clock-history"></i>
+      <span>Histórico de Leitura</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaColecoes()"
+    >
+      <i class="bi bi-collection"></i>
+      <span>Coleções</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaNotificacoes()"
+    >
+      <i class="bi bi-bell"></i>
+      <span>Notificações</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaMinhasPublicacoes()"
+    >
+      <i class="bi bi-file-earmark-text"></i>
+      <span>Minhas Publicações</span>
+    </button>
+
+    <button
+      type="button"
+      class="sidebar-item"
+      (click)="irParaConfiguracoes()"
+    >
+      <i class="bi bi-gear"></i>
+      <span>Configurações</span>
+    </button>
+
+  </aside>
+
+
+  <main class="usuarios-content">
+
+    <div class="cabecalho">
+
+      <div>
+        <h1>Usuários Seguidos</h1>
+
+        <p>
+          0 usuários que você segue.
+        </p>
+      </div>
+
+      <div class="acoes">
+
+        <div class="campo-pesquisa">
+          <i class="bi bi-search"></i>
+
+          <input
+            type="text"
+            placeholder="Pesquisar usuários..."
+            [(ngModel)]="pesquisa"
+          >
+        </div>
+
+        <div class="ordenacao">
+
+          <button
+            type="button"
+            [class.active]="ordenacaoAtual === 'Recentes'"
+            (click)="selecionarOrdenacao('Recentes')"
+          >
+            Recentes
+          </button>
+
+          <button
+            type="button"
+            [class.active]="ordenacaoAtual === 'A-Z'"
+            (click)="selecionarOrdenacao('A-Z')"
+          >
+            A-Z
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
 
     <div class="conteudo-vazio">
 
-        <div class="icone-vazio">
-            <i class="bi bi-people"></i>
-        </div>
+      <h2>Nenhum usuário seguido</h2>
 
-        <h2>Nenhum usuário seguido</h2>
-
-        <p>
-            Os usuários que você seguir aparecerão aqui.
-        </p>
+      <p>
+        Os usuários que você seguir aparecerão aqui.
+      </p>
 
     </div>
+
+  </main>
 
 </div>

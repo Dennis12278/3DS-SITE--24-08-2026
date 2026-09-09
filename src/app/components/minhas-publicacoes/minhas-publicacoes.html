@@ -1,132 +1,289 @@
-<div class="pagina-publicacoes">
+<div class="publicacoes-page">
 
-    <!-- TÍTULO -->
+    <!-- =========================================
+         MENU LATERAL
+    ========================================== -->
 
-    <div class="cabecalho-publicacoes">
+    <aside class="profile-sidebar">
 
-        <div>
-
-            <h1>Minhas Publicações</h1>
-
-            <p>
-                Gerencie os conteúdos que você publicou no DREAM.
-            </p>
-
-        </div>
-
-        <button class="botao-publicar" type="button">
-
-            <i class="bi bi-plus-lg"></i>
-
-            Criar publicação
-
-        </button>
-
-    </div>
-
-
-    <!-- ABAS -->
-
-    <div class="abas">
+        <!-- EDITAR PERFIL -->
 
         <button
             type="button"
-            class="aba ativa"
+            class="sidebar-item"
+            (click)="irParaMeuPerfil()"
         >
-            Publicações
+            <i class="bi bi-person"></i>
+
+            <span>Editar Perfil</span>
         </button>
 
-    </div>
 
+        <!-- TÍTULOS SEGUIDOS -->
 
-    <!-- FILTROS -->
-
-    <div class="filtros">
-
-        <!-- PESQUISA -->
-
-        <div class="campo-pesquisa">
-
-            <i class="bi bi-search"></i>
-
-            <input
-                type="text"
-                placeholder="Pesquisar minhas publicações..."
-            >
-
-        </div>
-
-
-        <!-- TIPO -->
-
-        <select
-            [(ngModel)]="tipoSelecionado"
-            (change)="abrirTipo()"
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaTitulosSeguidos()"
         >
+            <i class="bi bi-bookmark"></i>
 
-            <option value="Todos">
-                Todos os tipos
-            </option>
-
-            <option value="PDF">
-                PDF
-            </option>
-
-            <option value="Resumo">
-                Resumo
-            </option>
-
-            <option value="Anotação">
-                Anotação
-            </option>
-
-        </select>
+            <span>Títulos Seguidos</span>
+        </button>
 
 
-        <!-- STATUS -->
+        <!-- USUÁRIOS SEGUIDOS -->
 
-        <select
-            [(ngModel)]="statusSelecionado"
-            (change)="abrirStatus()"
+        <button
+            type="button"
+            class="sidebar-item"
         >
+            <i class="bi bi-person-plus"></i>
 
-            <option value="Todos">
-                Todos os status
-            </option>
-
-            <option value="Público">
-                Público
-            </option>
-
-            <option value="Privado">
-                Privado
-            </option>
-
-        </select>
-
-    </div>
+            <span>Usuários Seguidos</span>
+        </button>
 
 
-    <!-- ÁREA DAS PUBLICAÇÕES -->
+        <!-- GRUPOS SEGUIDOS -->
 
-    <div class="lista-publicacoes">
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-people"></i>
 
-        <div class="conteudo-vazio">
+            <span>Grupos Seguidos</span>
+        </button>
 
-            <div class="icone-vazio">
 
-                <i class="bi bi-file-earmark-text"></i>
+        <!-- HISTÓRICO DE LEITURA -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-clock-history"></i>
+
+            <span>Histórico de Leitura</span>
+        </button>
+
+
+        <!-- COLEÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-collection"></i>
+
+            <span>Coleções</span>
+        </button>
+
+
+        <!-- NOTIFICAÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-bell"></i>
+
+            <span>Notificações</span>
+        </button>
+
+
+        <!-- MINHAS PUBLICAÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item active"
+            (click)="irParaMinhasPublicacoes()"
+        >
+            <i class="bi bi-file-earmark-text"></i>
+
+            <span>Minhas Publicações</span>
+        </button>
+
+
+        <!-- CONFIGURAÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaConfiguracoes()"
+        >
+            <i class="bi bi-gear"></i>
+
+            <span>Configurações</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main class="publicacoes-content">
+
+
+        <!-- =====================================
+             CABEÇALHO
+        ====================================== -->
+
+        <div class="cabecalho-publicacoes">
+
+            <div>
+
+                <h1>
+                    Minhas Publicações
+                </h1>
+
+                <p>
+                    Gerencie os conteúdos que você publicou no DREAM.
+                </p>
 
             </div>
 
-            <h2>Nenhuma publicação</h2>
 
-            <p>
-                Seus PDFs, resumos e anotações aparecerão aqui.
-            </p>
+            <button
+                class="botao-publicar"
+                type="button"
+                (click)="criarPublicacao()"
+            >
+
+                <i class="bi bi-plus-lg"></i>
+
+                Criar publicação
+
+            </button>
 
         </div>
 
-    </div>
+
+        <!-- =====================================
+             ABAS
+        ====================================== -->
+
+        <div class="abas">
+
+            <button
+                type="button"
+                class="aba ativa"
+            >
+
+                Publicações
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             FILTROS
+        ====================================== -->
+
+        <div class="filtros">
+
+
+            <!-- PESQUISA -->
+
+            <div class="campo-pesquisa">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Pesquisar minhas publicações..."
+                >
+
+            </div>
+
+
+            <!-- TIPO -->
+
+            <select
+                [(ngModel)]="tipoSelecionado"
+                (change)="abrirTipo()"
+            >
+
+                <option value="Todos">
+                    Todos os tipos
+                </option>
+
+                <option value="PDF">
+                    PDF
+                </option>
+
+                <option value="Resumo">
+                    Resumo
+                </option>
+
+                <option value="Anotação">
+                    Anotação
+                </option>
+
+            </select>
+
+
+            <!-- STATUS -->
+
+            <select
+                [(ngModel)]="statusSelecionado"
+                (change)="abrirStatus()"
+            >
+
+                <option value="Todos">
+                    Todos os status
+                </option>
+
+                <option value="Público">
+                    Público
+                </option>
+
+                <option value="Privado">
+                    Privado
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =====================================
+             ÁREA DAS PUBLICAÇÕES
+        ====================================== -->
+
+        <div class="lista-publicacoes">
+
+
+            <div class="conteudo-vazio">
+
+
+                <div class="icone-vazio">
+
+                    <i class="bi bi-file-earmark-text"></i>
+
+                </div>
+
+
+                <h2>
+                    Nenhuma publicação
+                </h2>
+
+
+                <p>
+                    Seus PDFs, resumos e anotações aparecerão aqui.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
 
 </div>

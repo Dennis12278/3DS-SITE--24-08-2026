@@ -29,12 +29,46 @@ export class TitulosSeguidos {
   pesquisa = '';
 
   constructor(private router: Router) {}
-  
+
+
+  // =========================================
+  // NAVEGAÇÃO DO MENU LATERAL
+  // =========================================
+
+  irParaMeuPerfil(): void {
+    this.router.navigate(['/meu-perfil']);
+  }
+
+
+  irParaTitulosSeguidos(): void {
+    this.router.navigate(['/titulos-seguidos']);
+  }
+
+
+  irParaMinhasPublicacoes(): void {
+    this.router.navigate(['/minhas-publicacoes']);
+  }
+
+
+  irParaConfiguracoes(): void {
+    this.router.navigate(['/configuracoes']);
+  }
+
+
+  // =========================================
+  // ABRIR TÍTULO
+  // =========================================
+
   abrirTitulo(titulo: Titulo): void {
 
-  console.log('Título selecionado:', titulo.titulo);
+    console.log('Título selecionado:', titulo.titulo);
 
-}
+  }
+
+
+  // =========================================
+  // TÍTULOS
+  // =========================================
 
   titulos: Titulo[] = [
 
@@ -84,6 +118,10 @@ export class TitulosSeguidos {
   ];
 
 
+  // =========================================
+  // FILTRO
+  // =========================================
+
   selecionarFiltro(filtro: string): void {
 
     this.filtroAtual = filtro;
@@ -91,12 +129,20 @@ export class TitulosSeguidos {
   }
 
 
+  // =========================================
+  // ORDENAÇÃO
+  // =========================================
+
   selecionarOrdenacao(ordenacao: string): void {
 
     this.ordenacaoAtual = ordenacao;
 
   }
 
+
+  // =========================================
+  // TÍTULOS FILTRADOS
+  // =========================================
 
   get titulosFiltrados(): Titulo[] {
 
@@ -146,6 +192,10 @@ export class TitulosSeguidos {
 
   }
 
+
+  // =========================================
+  // TEMPO DESDE A LEITURA
+  // =========================================
 
   tempoDesdeLeitura(data: Date): string {
 
@@ -205,7 +255,7 @@ export class TitulosSeguidos {
 
     if (meses < 12) {
 
-      return `Lido há ${meses} mês${meses === 1 ? '' : 'es'}`;
+      return `Lido há ${meses} ${meses === 1 ? 'mês' : 'meses'}`;
 
     }
 

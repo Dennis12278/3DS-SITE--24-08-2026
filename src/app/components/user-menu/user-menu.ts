@@ -14,42 +14,50 @@ export class UserMenuComponent {
 
   constructor(private router: Router) {}
 
-  irParaMeuPerfil(): void {
-
-    this.fecharMenu.emit();
-
-    this.router.navigate(['/meu-perfil']);
-
-  }
-
-  irParaPerfilPublico(): void {
-
-    this.fecharMenu.emit();
-
-    this.router.navigate(['/perfil-publico']);
-
-  }
-
-  irParaTitulosSeguidos(): void {
-
-    this.fecharMenu.emit();
-
-    this.router.navigate(['/titulos-seguidos']);
-
-  }
-
-  irParaMinhasPublicacoes(): void {
-
-    this.fecharMenu.emit();
-
-    this.router.navigate(['/minhas-publicacoes']);
-
-  }
-
+  // ==============================
+  // FECHAR MENU
+  // ==============================
   fechar(): void {
-
     this.fecharMenu.emit();
-
   }
 
+  // ==============================
+  // MEU PERFIL
+  // ==============================
+  irParaMeuPerfil(): void {
+    this.fecharMenu.emit();
+    this.router.navigate(['/meu-perfil']);
+  }
+
+  // ==============================
+  // TÍTULOS SEGUIDOS
+  // ==============================
+  irParaTitulosSeguidos(): void {
+    this.fecharMenu.emit();
+    this.router.navigate(['/titulos-seguidos']);
+  }
+
+  // ==============================
+  // MINHAS PUBLICAÇÕES
+  // ==============================
+  irParaMinhasPublicacoes(): void {
+    this.fecharMenu.emit();
+    this.router.navigate(['/minhas-publicacoes']);
+  }
+
+  // ==============================
+  // CONFIGURAÇÕES
+  // ==============================
+  irParaConfiguracoes(): void {
+    this.fecharMenu.emit();
+    this.router.navigate(['/configuracoes']);
+  }
+
+  // ==============================
+  // PERFIL PÚBLICO
+  // ==============================
+  irParaPerfilPublico(): void {
+    this.fecharMenu.emit();
+    this.router.navigate(['/perfil-publico']);
+  }
 }

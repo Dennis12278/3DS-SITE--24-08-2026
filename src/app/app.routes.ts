@@ -31,6 +31,13 @@ export const routes: Routes = [
   {
     path: 'perfil-publico',
     component: PerfilPublico
-  }
+  },
+  
+  {
+    path: 'configuracoes',
+    loadComponent: () =>
+        import('./components/configuracoes/configuracoes')
+            .then(m => m.Configuracoes)
+}
 
 ];

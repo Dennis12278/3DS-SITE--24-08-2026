@@ -6,53 +6,95 @@
 
     <aside class="profile-sidebar">
 
-        <button type="button" class="sidebar-item">
+        <!-- EDITAR PERFIL -->
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaMeuPerfil()"
+        >
             <i class="bi bi-person"></i>
             <span>Editar Perfil</span>
         </button>
 
+
+        <!-- TÍTULOS SEGUIDOS -->
         <button
             type="button"
             class="sidebar-item active"
+            (click)="irParaTitulosSeguidos()"
         >
             <i class="bi bi-bookmark"></i>
             <span>Títulos Seguidos</span>
         </button>
 
-        <button type="button" class="sidebar-item">
+
+        <!-- USUÁRIOS SEGUIDOS -->
+        <button
+            type="button"
+            class="sidebar-item"
+        >
             <i class="bi bi-person-plus"></i>
             <span>Usuários Seguidos</span>
         </button>
 
-        <button type="button" class="sidebar-item">
+
+        <!-- GRUPOS SEGUIDOS -->
+        <button
+            type="button"
+            class="sidebar-item"
+        >
             <i class="bi bi-people"></i>
             <span>Grupos Seguidos</span>
         </button>
 
-        <button type="button" class="sidebar-item">
+
+        <!-- HISTÓRICO DE LEITURA -->
+        <button
+            type="button"
+            class="sidebar-item"
+        >
             <i class="bi bi-clock-history"></i>
             <span>Histórico de Leitura</span>
         </button>
 
-        <button type="button" class="sidebar-item">
+
+        <!-- COLEÇÕES -->
+        <button
+            type="button"
+            class="sidebar-item"
+        >
             <i class="bi bi-collection"></i>
             <span>Coleções</span>
         </button>
 
-        <button type="button" class="sidebar-item">
+
+        <!-- NOTIFICAÇÕES -->
+        <button
+            type="button"
+            class="sidebar-item"
+        >
             <i class="bi bi-bell"></i>
             <span>Notificações</span>
         </button>
 
+
+        <!-- MINHAS PUBLICAÇÕES -->
         <button
             type="button"
             class="sidebar-item"
+            (click)="irParaMinhasPublicacoes()"
         >
             <i class="bi bi-file-earmark-text"></i>
             <span>Minhas Publicações</span>
         </button>
 
-        <button type="button" class="sidebar-item">
+
+        <!-- CONFIGURAÇÕES -->
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaConfiguracoes()"
+        >
             <i class="bi bi-gear"></i>
             <span>Configurações</span>
         </button>
@@ -65,7 +107,6 @@
     ========================================== -->
 
     <main class="titulos-content">
-
 
         <!-- TÍTULO -->
 
@@ -218,28 +259,24 @@
 
         <section class="titulos-grid">
 
-
             <!-- CARDS DINÂMICOS -->
 
             <article
                 class="titulo-card"
-    *ngFor="let titulo of titulosFiltrados"
-    (click)="abrirTitulo(titulo)"
+                *ngFor="let titulo of titulosFiltrados"
+                (click)="abrirTitulo(titulo)"
             >
-
 
                 <!-- CAPA -->
 
                 <div class="titulo-capa">
 
-    <img
-        [src]="titulo.capa"
-        [alt]="'Capa de ' + titulo.titulo"
-    >
+                    <img
+                        [src]="titulo.capa"
+                        [alt]="'Capa de ' + titulo.titulo"
+                    >
 
-</div>
-
-
+                </div>
 
 
                 <!-- INFORMAÇÕES -->

@@ -1,15 +1,11 @@
 import { Routes } from '@angular/router';
 
 import { MeuPerfil } from './components/meu-perfil/meu-perfil';
-
 import { MinhasPublicacoes } from './components/minhas-publicacoes/minhas-publicacoes';
-
 import { TitulosSeguidos } from './components/titulos-seguidos/titulos-seguidos';
-
 import { PerfilPublico } from './components/perfil-publico/perfil-publico';
-
 import { UsuariosSeguidos } from './components/usuarios-seguidos/usuarios-seguidos';
-
+import { Calendario } from './components/calendario/calendario';
 
 export const routes: Routes = [
 
@@ -25,11 +21,6 @@ export const routes: Routes = [
   },
 
   {
-    path: 'minhas-publicacoes',
-    component: MinhasPublicacoes
-  },
-
-  {
     path: 'titulos-seguidos',
     component: TitulosSeguidos
   },
@@ -37,6 +28,11 @@ export const routes: Routes = [
   {
     path: 'usuarios-seguidos',
     component: UsuariosSeguidos
+  },
+
+  {
+    path: 'minhas-publicacoes',
+    component: MinhasPublicacoes
   },
 
   {
@@ -49,6 +45,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/configuracoes/configuracoes')
         .then(m => m.Configuracoes)
+  },
+
+  {
+    path: 'calendario',
+    component: Calendario
   }
 
 ];

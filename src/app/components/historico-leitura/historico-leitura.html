@@ -1,0 +1,212 @@
+<div class="historico-page">
+
+    <!-- =========================================
+         MENU LATERAL
+    ========================================== -->
+
+    <aside class="profile-sidebar">
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaMeuPerfil()"
+        >
+            <i class="bi bi-person"></i>
+            <span>Editar Perfil</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaTitulosSeguidos()"
+        >
+            <i class="bi bi-bookmark"></i>
+            <span>Títulos Seguidos</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaUsuariosSeguidos()"
+        >
+            <i class="bi bi-person-plus"></i>
+            <span>Usuários Seguidos</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaGruposSeguidos()"
+        >
+            <i class="bi bi-people"></i>
+            <span>Grupos Seguidos</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item active"
+            (click)="irParaHistorico()"
+        >
+            <i class="bi bi-clock-history"></i>
+            <span>Histórico de Leitura</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaColecoes()"
+        >
+            <i class="bi bi-collection"></i>
+            <span>Coleções</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaNotificacoes()"
+        >
+            <i class="bi bi-bell"></i>
+            <span>Notificações</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaMinhasPublicacoes()"
+        >
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Minhas Publicações</span>
+        </button>
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaConfiguracoes()"
+        >
+            <i class="bi bi-gear"></i>
+            <span>Configurações</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =========================================
+         CONTEÚDO
+    ========================================== -->
+
+    <main class="historico-content">
+
+        <!-- TÍTULO -->
+
+        <div class="historico-header">
+
+            <div>
+                <h1>Leia a história</h1>
+
+                <p>
+                    Retome de onde parou.
+                    <span>{{ leituras.length }}</span>
+                    capítulos registrados.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             LISTA DE LEITURAS
+        ========================================== -->
+
+        <div
+            class="leituras-grid"
+            *ngIf="leituras.length > 0"
+        >
+
+            <div
+                class="leitura-card"
+                *ngFor="let leitura of leituras"
+                (click)="abrirLeitura(leitura)"
+            >
+
+                <!-- CAPA -->
+
+                <div class="leitura-capa">
+
+                    <img
+                        [src]="leitura.capa"
+                        [alt]="leitura.titulo"
+                    >
+
+                </div>
+
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="leitura-info">
+
+                    <h2>
+                        {{ leitura.titulo }}
+                    </h2>
+
+                    <div class="leitura-detalhes">
+
+                        <span>
+                            <i class="bi bi-eye"></i>
+
+                            {{ leitura.capituloAtual }}
+                            /
+                            {{ leitura.totalCapitulos }}
+                        </span>
+
+                        <span>
+                            {{ leitura.lidoHa }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRESSO -->
+
+                <div
+                    class="progresso"
+                    [style.--progresso]="leitura.progresso + '%'"
+                >
+
+                    <span>
+                        {{ leitura.progresso }}%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             SEM HISTÓRICO
+        ========================================== -->
+
+        <div
+            class="historico-vazio"
+            *ngIf="leituras.length === 0"
+        >
+
+            <i class="bi bi-clock-history"></i>
+
+            <h2>
+                Nenhum histórico de leitura
+            </h2>
+
+            <p>
+                Os títulos que você começar a ler
+                aparecerão aqui.
+            </p>
+
+        </div>
+
+    </main>
+
+</div>

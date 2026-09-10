@@ -71,6 +71,10 @@
     color: #ffffff;
 }
 
+.sidebar-item.active i {
+    color: #70c9df;
+}
+
 .sidebar-item.active:hover {
     background: #3a474e;
     color: #ffffff;
@@ -122,7 +126,11 @@
 
 .tab.active {
     color: #ffffff;
-    border-bottom-color: #8b5cf6;
+    border-bottom-color: #70c9df;
+}
+
+.tab.active i {
+    color: #70c9df;
 }
 
 
@@ -202,7 +210,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #3d4a51;
+    background: #3d617c;
     color: #ffffff;
     font-size: 21px;
     font-weight: 600;
@@ -224,12 +232,13 @@
 }
 
 .primary-button {
-    background: #8b5cf6;
-    color: #ffffff;
+    background: #70c9df;
+    color: #1f2b30;
+    font-weight: 600;
 }
 
 .primary-button:hover {
-    background: #7c4fe0;
+    background: #5db8cf;
 }
 
 .secondary-button {
@@ -284,7 +293,7 @@ input {
 }
 
 input:focus {
-    border-color: #8b5cf6;
+    border-color: #70c9df;
 }
 
 .input-button input {
@@ -397,7 +406,7 @@ input:focus {
 }
 
 .switch input:checked + span {
-    background: #8b5cf6;
+    background: #70c9df;
 }
 
 .switch input:checked + span::before {
@@ -436,12 +445,13 @@ input:focus {
 
 .theme-option.selected {
     background: #2b353a;
+    box-shadow: inset 3px 0 0 #70c9df;
 }
 
 .theme-option input {
     width: 17px;
     height: 17px;
-    accent-color: #8b5cf6;
+    accent-color: #70c9df;
 }
 
 .theme-option strong {
@@ -474,6 +484,7 @@ input:focus {
         width: 100%;
         font-size: 16px;
     }
+
 }
 
 
@@ -510,6 +521,7 @@ input:focus {
     .password-form {
         width: 100%;
     }
+
 }
 
 
@@ -535,4 +547,5 @@ input:focus {
     .input-button button {
         width: 100%;
     }
+
 }

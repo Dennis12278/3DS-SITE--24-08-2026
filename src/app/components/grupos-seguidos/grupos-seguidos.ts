@@ -3,25 +3,26 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-interface UsuarioSeguido {
+interface GrupoSeguido {
   nome: string;
-  usuario: string;
-  avatar?: string;
+  iniciais: string;
+  membros: number;
   publicacoes: number;
+  titulos: number;
   seguidoHa: string;
 }
 
 @Component({
-  selector: 'app-usuarios-seguidos',
+  selector: 'app-grupos-seguidos',
   standalone: true,
   imports: [
     CommonModule,
     FormsModule
   ],
-  templateUrl: './usuarios-seguidos.html',
-  styleUrl: './usuarios-seguidos.css'
+  templateUrl: './grupos-seguidos.html',
+  styleUrl: './grupos-seguidos.css'
 })
-export class UsuariosSeguidos {
+export class GruposSeguidos {
 
   pesquisa: string = '';
 
@@ -29,16 +30,17 @@ export class UsuariosSeguidos {
 
 
   /* =========================================
-     USUÁRIOS SEGUIDOS
+     GRUPOS SEGUIDOS
   ========================================= */
 
-  usuarios: UsuarioSeguido[] = [
+  grupos: GrupoSeguido[] = [
 
     {
-      nome: 'zzyzzy',
-      usuario: '@duziebby',
-      avatar: '',
-      publicacoes: 0,
+      nome: 'Temple Scan',
+      iniciais: 'TS',
+      membros: 0,
+      publicacoes: 10254,
+      titulos: 282,
       seguidoHa: '4 segundos'
     }
 
@@ -90,7 +92,7 @@ export class UsuariosSeguidos {
 
 
   /* =========================================
-     ORDENAR
+     ORDENAÇÃO
   ========================================= */
 
   selecionarOrdenacao(tipo: string): void {
@@ -101,12 +103,12 @@ export class UsuariosSeguidos {
 
 
   /* =========================================
-     USUÁRIOS FILTRADOS
+     GRUPOS FILTRADOS
   ========================================= */
 
-  get usuariosFiltrados(): UsuarioSeguido[] {
+  get gruposFiltrados(): GrupoSeguido[] {
 
-    let resultado = [...this.usuarios];
+    let resultado = [...this.grupos];
 
 
     /* PESQUISA */
@@ -116,9 +118,8 @@ export class UsuariosSeguidos {
       const texto =
         this.pesquisa.toLowerCase().trim();
 
-      resultado = resultado.filter(usuario =>
-        usuario.nome.toLowerCase().includes(texto) ||
-        usuario.usuario.toLowerCase().includes(texto)
+      resultado = resultado.filter(grupo =>
+        grupo.nome.toLowerCase().includes(texto)
       );
 
     }
@@ -144,11 +145,11 @@ export class UsuariosSeguidos {
      DEIXAR DE SEGUIR
   ========================================= */
 
-  deixarDeSeguir(usuario: UsuarioSeguido): void {
+  deixarDeSeguir(grupo: GrupoSeguido): void {
 
     const confirmar =
       confirm(
-        `Deseja deixar de seguir ${usuario.nome}?`
+        `Deseja deixar de seguir o grupo ${grupo.nome}?`
       );
 
     if (!confirmar) {
@@ -156,9 +157,9 @@ export class UsuariosSeguidos {
     }
 
 
-    this.usuarios =
-      this.usuarios.filter(
-        item => item !== usuario
+    this.grupos =
+      this.grupos.filter(
+        item => item !== grupo
       );
 
   }

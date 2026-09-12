@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { SidebarComponent } from '../sidebar/sidebar';
 
 @Component({
   selector: 'app-configuracoes',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SidebarComponent
   ],
   templateUrl: './configuracoes.html',
   styleUrl: './configuracoes.css'
@@ -32,58 +33,6 @@ export class Configuracoes {
   mostrarEstatisticas: boolean = true;
 
   tema: string = 'escuro';
-
-
-  constructor(private router: Router) {}
-
-
-  // ==============================
-  // NAVEGAÇÃO DO MENU
-  // ==============================
-
-  irParaMeuPerfil(): void {
-    this.router.navigate(['/meu-perfil']);
-  }
-
-
-  irParaTitulosSeguidos(): void {
-    this.router.navigate(['/titulos-seguidos']);
-  }
-
-
-  irParaUsuariosSeguidos(): void {
-    this.router.navigate(['/usuarios-seguidos']);
-  }
-
-
-  irParaGruposSeguidos(): void {
-    this.router.navigate(['/grupos-seguidos']);
-  }
-
-
-  irParaHistorico(): void {
-    this.router.navigate(['/historico-leitura']);
-  }
-
-
-  irParaColecoes(): void {
-    this.router.navigate(['/colecoes']);
-  }
-
-
-  irParaNotificacoes(): void {
-    this.router.navigate(['/notificacoes']);
-  }
-
-
-  irParaMinhasPublicacoes(): void {
-    this.router.navigate(['/minhas-publicacoes']);
-  }
-
-
-  irParaConfiguracoes(): void {
-    this.router.navigate(['/configuracoes']);
-  }
 
 
   // ==============================

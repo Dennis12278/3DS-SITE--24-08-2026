@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { SidebarComponent } from '../sidebar/sidebar';
 
 @Component({
   selector: 'app-minhas-publicacoes',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    SidebarComponent
   ],
   templateUrl: './minhas-publicacoes.html',
   styleUrl: './minhas-publicacoes.css'
@@ -16,48 +17,6 @@ export class MinhasPublicacoes {
   tipoSelecionado = 'Todos';
 
   statusSelecionado = 'Todos';
-
-
-  constructor(private router: Router) {}
-
-
-  // =========================================
-  // NAVEGAÇÃO DO MENU LATERAL
-  // =========================================
-
-  irParaMeuPerfil(): void {
-
-    this.router.navigate(['/meu-perfil']);
-
-  }
-
-
-  irParaTitulosSeguidos(): void {
-
-    this.router.navigate(['/titulos-seguidos']);
-
-  }
-
-
-  irParaMinhasPublicacoes(): void {
-
-    this.router.navigate(['/minhas-publicacoes']);
-
-  }
-
-
-  irParaConfiguracoes(): void {
-
-    this.router.navigate(['/configuracoes']);
-
-  }
-
-
-  irParaPerfilPublico(): void {
-
-    this.router.navigate(['/perfil-publico']);
-
-  }
 
 
   // =========================================

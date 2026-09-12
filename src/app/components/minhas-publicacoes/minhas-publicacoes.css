@@ -7,60 +7,6 @@
     background: #20272b;
 }
 
-.profile-sidebar {
-    width: 300px;
-
-    flex-shrink: 0;
-
-    padding: 55px 20px;
-
-    box-sizing: border-box;
-}
-
-.sidebar-item {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 15px 20px;
-
-    margin-bottom: 8px;
-
-    border: none;
-    border-radius: 7px;
-
-    background: transparent;
-
-    color: #aebdc7;
-
-    font-size: 16px;
-
-    text-align: left;
-
-    cursor: pointer;
-}
-
-.sidebar-item i {
-    width: 20px;
-
-    font-size: 18px;
-}
-
-.sidebar-item:hover {
-    background: #2c383f;
-
-    color: #ffffff;
-}
-
-.sidebar-item.active {
-    background: #3a474f;
-
-    color: #ffffff;
-}
-
 .publicacoes-content {
     flex: 1;
 
@@ -70,6 +16,7 @@
 
     box-sizing: border-box;
 }
+
 
 /* =========================================
    CABEÇALHO
@@ -367,56 +314,11 @@
    RESPONSIVO
 ========================================= */
 
-@media (max-width: 900px) {
-
-    .publicacoes-page {
-
-        gap: 20px;
-
-        padding: 30px 20px;
-
-    }
-
-
-    .profile-sidebar {
-
-        width: 220px;
-
-    }
-
-
-    .sidebar-item {
-
-        font-size: 14px;
-
-    }
-
-}
-
-
 @media (max-width: 700px) {
 
     .publicacoes-page {
 
         flex-direction: column;
-
-    }
-
-
-    .profile-sidebar {
-
-        width: 100%;
-
-        flex-direction: row;
-
-        flex-wrap: wrap;
-
-    }
-
-
-    .sidebar-item {
-
-        width: auto;
 
     }
 

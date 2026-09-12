@@ -1,0 +1,289 @@
+<div class="publicacoes-page">
+
+    <!-- =========================================
+         MENU LATERAL
+    ========================================== -->
+
+    <aside class="profile-sidebar">
+
+        <!-- EDITAR PERFIL -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaMeuPerfil()"
+        >
+            <i class="bi bi-person"></i>
+
+            <span>Editar Perfil</span>
+        </button>
+
+
+        <!-- TÍTULOS SEGUIDOS -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaTitulosSeguidos()"
+        >
+            <i class="bi bi-bookmark"></i>
+
+            <span>Títulos Seguidos</span>
+        </button>
+
+
+        <!-- USUÁRIOS SEGUIDOS -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-person-plus"></i>
+
+            <span>Usuários Seguidos</span>
+        </button>
+
+
+        <!-- GRUPOS SEGUIDOS -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-people"></i>
+
+            <span>Grupos Seguidos</span>
+        </button>
+
+
+        <!-- HISTÓRICO DE LEITURA -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-clock-history"></i>
+
+            <span>Histórico de Leitura</span>
+        </button>
+
+
+        <!-- COLEÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-collection"></i>
+
+            <span>Coleções</span>
+        </button>
+
+
+        <!-- NOTIFICAÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+        >
+            <i class="bi bi-bell"></i>
+
+            <span>Notificações</span>
+        </button>
+
+
+        <!-- MINHAS PUBLICAÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item active"
+            (click)="irParaMinhasPublicacoes()"
+        >
+            <i class="bi bi-file-earmark-text"></i>
+
+            <span>Minhas Publicações</span>
+        </button>
+
+
+        <!-- CONFIGURAÇÕES -->
+
+        <button
+            type="button"
+            class="sidebar-item"
+            (click)="irParaConfiguracoes()"
+        >
+            <i class="bi bi-gear"></i>
+
+            <span>Configurações</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main class="publicacoes-content">
+
+
+        <!-- =====================================
+             CABEÇALHO
+        ====================================== -->
+
+        <div class="cabecalho-publicacoes">
+
+            <div>
+
+                <h1>
+                    Minhas Publicações
+                </h1>
+
+                <p>
+                    Gerencie os conteúdos que você publicou no DREAM.
+                </p>
+
+            </div>
+
+
+            <button
+                class="botao-publicar"
+                type="button"
+                (click)="criarPublicacao()"
+            >
+
+                <i class="bi bi-plus-lg"></i>
+
+                Criar publicação
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             ABAS
+        ====================================== -->
+
+        <div class="abas">
+
+            <button
+                type="button"
+                class="aba ativa"
+            >
+
+                Publicações
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             FILTROS
+        ====================================== -->
+
+        <div class="filtros">
+
+
+            <!-- PESQUISA -->
+
+            <div class="campo-pesquisa">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Pesquisar minhas publicações..."
+                >
+
+            </div>
+
+
+            <!-- TIPO -->
+
+            <select
+                [(ngModel)]="tipoSelecionado"
+                (change)="abrirTipo()"
+            >
+
+                <option value="Todos">
+                    Todos os tipos
+                </option>
+
+                <option value="PDF">
+                    PDF
+                </option>
+
+                <option value="Resumo">
+                    Resumo
+                </option>
+
+                <option value="Anotação">
+                    Anotação
+                </option>
+
+            </select>
+
+
+            <!-- STATUS -->
+
+            <select
+                [(ngModel)]="statusSelecionado"
+                (change)="abrirStatus()"
+            >
+
+                <option value="Todos">
+                    Todos os status
+                </option>
+
+                <option value="Público">
+                    Público
+                </option>
+
+                <option value="Privado">
+                    Privado
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =====================================
+             ÁREA DAS PUBLICAÇÕES
+        ====================================== -->
+
+        <div class="lista-publicacoes">
+
+
+            <div class="conteudo-vazio">
+
+
+                <div class="icone-vazio">
+
+                    <i class="bi bi-file-earmark-text"></i>
+
+                </div>
+
+
+                <h2>
+                    Nenhuma publicação
+                </h2>
+
+
+                <p>
+                    Seus PDFs, resumos e anotações aparecerão aqui.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
